@@ -13,7 +13,7 @@ document.getElementById("checkComplexity").addEventListener("click", async () =>
     loadingOverlay.style.visibility = "visible";
     button.disabled = true;
 
-    fetch('http://localhost:5000/analyze', {
+    fetch('https://leetcode-extension.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: code })
@@ -48,7 +48,7 @@ document.getElementById("improveSolution").addEventListener("click", async () =>
     loadingOverlay.style.visibility = "visible";
     button.disabled = true;
 
-    fetch('http://localhost:5000/improve', {
+    fetch('https://leetcode-extension.onrender.com//improve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: code })
