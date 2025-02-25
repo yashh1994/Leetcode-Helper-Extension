@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Complexity Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            width: 250px;
+            padding: 10px;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .improv-button {
+            background-color: #6acc4c;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .check-comlexity {
+            background-color: #f19113;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button:hover {
+            filter: brightness(1.1);
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            backdrop-filter: blur(2px);
+            visibility: hidden;
+        }
+
+        /* Text Field */
+        #queryInput {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #queryInput:focus {
+            border-color: #6acc4c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(106, 204, 76, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>LeetCode Helper</h2>
+    <button class="check-comlexity" id="checkComplexity">Check Complexity</button>
+    <input type="text" id="queryInput" placeholder="Enter your query">
+    <button class="improv-button" id="improveSolution">Improve Solution</button>
+    <p id="result">Click the button to analyze.</p>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">🔍 Analyzing...</div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
