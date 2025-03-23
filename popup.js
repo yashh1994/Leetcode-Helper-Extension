@@ -7,7 +7,7 @@ document.getElementById("checkComplexity").addEventListener("click", async () =>
     const code = getTextFromQueryField();
 
     if (!code.trim()) {
-        console.warn("No code found.");
+        console.warn("No code or Number Found found.");
         resultField.innerText = "Please enter some code to analyze.";
         return;
     }
@@ -50,9 +50,10 @@ document.getElementById("improveSolution").addEventListener("click", async () =>
     const button = document.getElementById("improveSolution");
     const resultField = document.getElementById("result");
     const code = getTextFromQueryField();
+    const number = getNumberFromQueryField();
 
-    if (!code.trim()) {
-        console.warn("No solution found.");
+    if (!code.trim() || !number.trim()) {
+        console.warn("No Content solution found.");
         resultField.innerText = "Please enter a solution to improve.";
         return;
     }
@@ -64,7 +65,7 @@ document.getElementById("improveSolution").addEventListener("click", async () =>
         const response = await fetch('https://leetcode-extension.onrender.com/improve', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code })
+            body: JSON.stringify({ code , number })
         });
 
         if (!response.ok) {
@@ -93,4 +94,9 @@ document.getElementById("improveSolution").addEventListener("click", async () =>
 function getTextFromQueryField() {
     const queryField = document.getElementById("queryInput");
     return queryField ? queryField.value.trim() : "";
+}
+
+function getNumberFromQueryField() {
+    const numberField = document.getElementById("numberInput");
+    return numberField ? numberField.value.trim() : "";
 }
